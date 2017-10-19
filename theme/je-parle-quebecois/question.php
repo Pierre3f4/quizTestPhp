@@ -25,4 +25,12 @@
 		$output .= "</div>";
 		return $output;
 	}
+/*
+	function themeAnimation($idQuestion, $inOut){
+		if($idQuestion==1){
+		}else{
+			return NULL;
+		}
+	}
+	*/
 ?>

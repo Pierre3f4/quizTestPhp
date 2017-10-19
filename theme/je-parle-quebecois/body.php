@@ -1,0 +1,1 @@
+<img id="asteroid" src="<?php echo $themePath?>/images/asteroid.png" alt="asteroid"/>
