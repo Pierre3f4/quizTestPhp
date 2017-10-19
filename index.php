@@ -33,6 +33,7 @@
         <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
+
     <div class='question-wrapper'>
         <?php
             print ($intro);
@@ -40,6 +41,9 @@
             //$questionActive = new Question('1');
             //print ($questionActive->render());
         ?>
+    </div>
+    <div class='points-wrapper'>
+        <span id="points-counter">0</span> Point(s)
     </div>
 
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>

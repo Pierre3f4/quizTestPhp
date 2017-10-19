@@ -1,6 +1,18 @@
-.option{
+.option.available{
     cursor: pointer;
 }
 .option.selected{
     font-weight: bold;
+}
+.option.bad{
+    text-decoration: line-through;
+}
+.option.good{
+    text-decoration: underline;
+}
+.option.selected.bad{
+    color:red;
+}
+.option.selected.good{
+    color:green;
 }

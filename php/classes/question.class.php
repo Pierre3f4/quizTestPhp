@@ -58,8 +58,9 @@ class Question {
 				$options .= "<div class='option option-multichoise' option-id='$value[id_option]'>$value[libele]</div>";
 			}
 		}
-		$submit = "<button class='submit-question'>Suivant</button>";
-		return themeQuestion($libele, $options, $submit);
+		$submit = "<button class='submit-question'>Valider</button>";
+		$next = "<button class='btn-next-question'>Suivant</button>";
+		return themeQuestion($libele, $options, $submit, $next);
 	}
 	public function getQuestionObject(){
 		$thisQuestion = array(
