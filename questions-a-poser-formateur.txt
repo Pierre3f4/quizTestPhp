@@ -1,0 +1,2 @@
+- vérifier si les requetes préparées sont bien sécurisées.
+

@@ -1,0 +1,6 @@
+.option{
+    cursor: pointer;
+}
+.option.selected{
+    font-weight: bold;
+}
