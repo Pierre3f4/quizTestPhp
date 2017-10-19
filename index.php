@@ -18,15 +18,15 @@
         <link rel="manifest" href="site.webmanifest">
         <link rel="apple-touch-icon" href="icon.png">
         <!-- Place favicon.ico in the root directory -->
-
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="<?php echo $themePath . 'css/style.css' ?>">
         <?php
             include($themePath . 'header.php');
             include($themePath . 'question.php');
         ?>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="<?php echo $themePath . 'css/style.css' ?>">
+
         
     </head>
     <body>

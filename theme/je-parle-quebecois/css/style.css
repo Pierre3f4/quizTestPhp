@@ -1,0 +1,130 @@
+@font-face {
+    font-family: 'kankinregular';
+    src: url('fonts/kankin-webfont.eot');
+    src: url('fonts/kankin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/kankin-webfont.woff2') format('woff2'),
+         url('fonts/kankin-webfont.woff') format('woff'),
+         url('fonts/kankin-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+html, body, .question-wrapper{
+	position: relative;
+    height: 100%;
+}
+body{
+    font-family: Arial, serif;
+    font-size: 16px;
+    color: #fff;
+    background-color: #343231;
+    line-height: 150%;
+}
+h3{
+    margin: 0;
+    line-height: 140%;
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-family: 'kankinregular';
+    color: #f0d9ad;
+    margin-bottom: 40px;
+}
+.bg-marron {
+    background-color: #211d1e;
+    padding: 3px 5px;
+}
+.color-white{
+	color: #fff;
+}
+.display-table{
+	display: table;
+    width: 100%;
+    min-height: 100%;
+}
+.display-cell{
+	display: table-cell;
+	vertical-align: middle;
+}
+.points-wrapper{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #dbdbdb;
+	width: 80px;
+	text-align: center;
+}
+.question-wrapper{
+	text-align: center;
+}
+
+
+/*----------------------------------------------*/
+/*-------Gestion des radio button et check box---------*/
+/*--------------------------------------------------*/
+.options-wrapper{
+  display: inline-block;
+}
+.options-inner{
+  display: flex;
+  flex-direction: column;
+}
+.option{
+    font-size: 22px;
+    color: #f3f3f3;
+    font-family: arial, sans-serif;
+    cursor: pointer;
+    text-align: left;
+	padding-left: 40px;
+	margin-bottom: 20px;
+}
+.option.option-multichoise{
+	background: url(../images/radio-btn.png) left 4px no-repeat transparent;
+}
+.option.option-multichoise.selected{
+	background: url(../images/radio-btn-checked.png) left 4px no-repeat transparent;
+	font-weight: normal;
+}
+
+.option.good{
+	text-decoration: none;
+}
+.option.selected.bad,
+.option.option-multichoise.selected.good{
+	color: #f3f3f3;
+}
+.option.option-multichoise.selected.good:after {
+	margin-left: 10px;
+	content: "\f164";
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-style: normal;
+	display: inline-block;
+	text-decoration: inherit;
+}
+.option.option-multichoise.selected.bad:after {
+	margin-left: 10px;
+	content: "\f165";
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-style: normal;
+	display: inline-block;
+	text-decoration: inherit;
+}
+button {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	text-decoration: none;
+	font-size: 18px;
+	font-family: 'kankinregular';
+	display: inline;
+	padding: 10px 20px 10px 20px;
+	background-color: #f0d9ad;
+	border: 1px solid #f0d9ad;
+	color: #211d1e;
+	text-align: center;
+}
+
+button:hover {
+	background-color: #211d1e;
+	border: 1px solid #f0d9ad;
+	color: #fff;
+}

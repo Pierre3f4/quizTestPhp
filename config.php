@@ -5,7 +5,7 @@
 		'user' => 'root',
 		'pwd' => ''
 	);
-	$themePath = 'theme/bootstrap/'; 
+	$themePath = 'theme/je-parle-quebecois/'; 
 	$metaDescription = 'Quizz test PHP';
 	$googleAnalyticsId = 'UA-XXXXX-Y';
 
