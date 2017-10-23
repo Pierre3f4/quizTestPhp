@@ -27,11 +27,13 @@
 			$output .= "</div>";
 		$output .= "</div>";
 		$output .= themeAnimation($idQuestion);
+		$output .= animationIn($idQuestion);
+		$output .= animationOut($idQuestion);
 		return $output;
 	}
 
-	function themeAnimation($idQuestion, $inOut = false){
-		if($idQuestion==1 && $inOut == false){
+	function themeAnimation($idQuestion){
+		if($idQuestion==1){
 			return '
 			
 			<div class="scene-wrapper">
@@ -44,46 +46,91 @@
 					<div id="etoiles-filantes"></div>
 					<div id="asteroid"></div>
 				</div>
-			</div>
+			</div>';
+		}
+	}
+	function animationIn($idQuestion){
+		if($idQuestion==1){
+			return '
 			<script type="text/javascript">
-				$(".wrapper-question").addClass("transition");
-				$(document).ready(function () {
-					var earthIn = new TimelineMax({onComplete:function(){$(".wrapper-question.transition").removeClass("transition");}});
-					earthIn.add(
-						TweenMax.fromTo($(".scene"), .5, {opacity : 0},  {opacity : 1})
+					var animationIn = new TimelineMax();
+					animationIn.add(
+						TweenMax.fromTo($(".scene"), 2, {opacity : 0},  {opacity : 1})
 					);
-					earthIn.add(
+					animationIn.add(
 						TweenMax.fromTo($("#etoiles-filantes"), 5, {x:750, y:-150},  {x:-750, y:150}), 0
 					);
-					earthIn.add(
-						TweenMax.fromTo($("#asteroid"), 5, {x:500, y:50},  {x:-500, y:250}), 0
+					animationIn.add(
+						TweenMax.fromTo($("#asteroid"), 5, {x:500, y:50, rotation:0},  {x:-500, y:250, rotation:-50}), 0
 					);
-					earthIn.add(
+					animationIn.add(
 						TweenMax.fromTo($("#map-monde"), 5, {backgroundPosition: "0px 0px"},  {backgroundPosition: "-615px 0px"}), 0
 					);
 					//rebond
-					earthIn.add(
-						TweenMax.to($("#globe"), 4, {ease: Elastic.easeOut.config(1, 0.3), y: "300px"}), 5
+					animationIn.add(
+						TweenMax.to($("#globe"), 2, {ease: Power4.easeInOut, y: "500px", scale:1.5}), 5
 					);
-					earthIn.add(
-						TweenMax.to($("#asteroid"), 4, {ease: Elastic.easeOut.config(1, 0.3), y: "450px"}), 5
+					animationIn.add(
+						TweenMax.to($("#asteroid"), 2, {ease: Power4.easeInOut, y: "450px", scale:1.5}), 5
 					);
-					earthIn.add(
-						TweenMax.to($("#etoiles-filantes"), 4, {ease: Elastic.easeOut.config(1, 0.3), y: "400px"}), 5
+					animationIn.add(
+						TweenMax.to($("#etoiles-filantes"), 2, {ease: Power4.easeInOut, y: "400px, scale:1.5"}), 5
 					);
-					earthIn.add(
-						TweenMax.fromTo($(".question-inner"), 2, {y:-700}, {y: 0, ease: Power4.easeOut}), 7
+					animationIn.add(
+						TweenMax.fromTo($(".question-inner"), 2, {y:-300, opacity:0, scale:.5}, {y: 0, opacity:1, scale:1, ease: Power4.easeInOut}), 5
 					);
 					
 
-					//earthIn.pause();
+					animationIn.pause();
 					
-				});
-				//earthIn.play();
 			</script>
 			';
 		}else{
-			return NULL;
+			return '
+				<script type="text/javascript">
+							animationIn = "";
+				</script>
+			';
+		}
+	}
+	function animationOut($idQuestion){
+		if($idQuestion==1){
+			return '
+				<script type="text/javascript">
+							animationOut = new TimelineMax();
+
+							animationOut.add(
+								TweenMax.to($("#etoiles-filantes"), 2, { opacity: 0}), 0
+							);
+							animationOut.add(
+								TweenMax.to($("#asteroid"), 2, { opacity: 0}), 0
+							);
+							animationOut.add(
+								TweenMax.to($(".question-inner"), 2, {scale:0, ease: Power4.easeInOut}), 0
+							);
+							animationOut.add(
+								TweenMax.to($(".question-inner"), 1.5, {y:-500, opacity:0, ease: Power4.easeInOut}), .5
+							);
+							animationOut.add(
+								TweenMax.to($("#globe"), 2, {scale:0, ease: Power4.easeInOut}), 0
+							);
+							animationOut.add(
+								TweenMax.to($("#globe"), 2, {y:-500, opacity:0, ease: Power4.easeInOut}), 0
+							);
+							animationOut.add(
+								TweenMax.to($(".stars"), 1, {opacity:0, scale:.5}), 1.5
+							);
+							animationOut.pause();
+
+
+				</script>
+			';
+		}else{
+			return '
+				<script type="text/javascript">
+							animationOut = "";
+				</script>
+			';
 		}
 	}
 

@@ -1,8 +1,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/easing/EasePack.min.js"></script>
 
-<!--
+
 <script type="text/javascript">
+/*
 	$(document).ready(function () {
 		var earthIn = new TimelineMax({onComplete:function(){$('.wrapper-question.transition').removeClass('transition');}});
 
@@ -39,6 +40,31 @@
 		earthIn.pause();
 		
 	});
+*/
+/*
+	function animationOut(){
+		var earthOut = new TimelineMax({onComplete:function(){$(".question-wrapper.transition").removeClass("transition");}});
+
+		earthOut.add(
+			TweenMax.to($('#etoiles-filantes'), 2, { opacity: 0}), 0
+		);
+		earthOut.add(
+			TweenMax.to($('#asteroid'), 2, { opacity: 0}), 0
+		);
+		earthOut.add(
+			TweenMax.to($('.question-inner'), 3, {scale:0, ease: Power4.easeInOut}), 0
+		);
+		earthOut.add(
+			TweenMax.to($('.question-inner'), 1.5, {y:-500, opacity:0, ease: Power4.easeInOut}), 1.5
+		);
+		earthOut.add(
+			TweenMax.to($('#globe'), 3, {scale:0, ease: Power4.easeInOut}), 0
+		);
+		earthOut.add(
+			TweenMax.to($('#globe'), 3, {y:-500, opacity:0, ease: Power4.easeInOut}), 0
+		);
+
+	}
+*/
     
 </script>
--->

@@ -1,6 +1,8 @@
     <script type="text/javascript">
 		var idOptionActive="";
 		var points=0;
+		animationOut = "";
+		animationIn = "";
 		
         function ajaxToControler(){
         	$.ajax({
@@ -13,8 +15,6 @@
 		       		console.log(data);
 		       		data=JSON.parse(data);
 
-
-
 			        if(typeof data['checkPoint'] != "undefined" && data['checkPoint'] != null){
 			        	checkPoint(data['checkPoint']);
 			        }
@@ -25,16 +25,27 @@
 			        $('.btn-next-question').show();
 		        	$('.submit-question').hide();
 
-		        	$('.btn-next-question').on( "click", function(){
-		        		$('.question-wrapper').html(data['render']);
-		        		questionInit();
-		        		
-					});
-
-			        if(idOptionActive == '-1'){
+			        if(idOptionActive == ''){
 		        		$('.question-wrapper').html(data['render']);
 		        		questionInit();
 			        }
+		        	$('.btn-next-question').on( "click", function(){
+		        			if(animationOut!==""){
+		        				$(".question-wrapper").addClass("transition");
+		        				animationOut.addCallback(function(){
+		        					$(".question-wrapper.transition").removeClass("transition");
+		        					$('.question-wrapper').html(data['render']);
+		        					questionInit();
+		        				});
+		        				animationOut.play();
+		        			}else{
+		        				$('.question-wrapper').html(data['render']);
+		        				questionInit();
+		        			}
+		        			
+					});
+
+
 			    }
 		    });
         }
@@ -48,17 +59,24 @@
 				$('.option').removeClass("selected");
 				$(this).addClass("selected");
 				$('.submit-question').show();
+	        	idOptionActive = $(this).attr("option-id");
 			});
-			
+
 			$('#btn-start').on( "click", function(){
-	        	idOptionActive = '-1';
 	        	ajaxToControler();
 	        });
 	        $('.submit-question').on( "click", function(){
 	        	$('.option.available').removeClass('available');
-	        	idOptionActive = $('.option.selected').attr("option-id");
 	        	ajaxToControler();
 			});
+
+			if(animationIn!==""){
+				$(".question-wrapper").addClass("transition");
+				animationIn.addCallback(function(){
+		        	$(".question-wrapper.transition").removeClass("transition");
+		        });
+		        animationIn.play();
+			}
 		}
 		questionInit();
 

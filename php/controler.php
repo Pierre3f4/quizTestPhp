@@ -1,7 +1,7 @@
 <?php
 
 	if($_POST){
-		if(!empty($_POST['idOptionActive'])){
+		if(isset($_POST['idOptionActive'])){
 			$idOptionActive= $_POST['idOptionActive'];
 			$checkPoint = array();
 			$feedbackQuestionActive="";
@@ -11,12 +11,11 @@
 			$pdo=new PDO('mysql:host=' . $bdd['host'] . ';dbname=' . $bdd['dbname'], $bdd['user'], $bdd['pwd'], array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 
 
-			if($idOptionActive=="-1"){
+			if(empty($idOptionActive)){
 				//Si on est sur intro, on start le quiz en appelant la question 1
 				$idNextQuestion = 1;
 			}else{
-				//on gère les infos à renvoyer à ajax.php dans le cas d'un nouvel affichage de question
-				//on récupère les données de BDD
+				//on doit récupérer en bdd la prochaine question à partir de l'option active
 				
 				//Exécute une requête préparée en passant un tableau de valeurs
 				$sql = 'SELECT * FROM options WHERE id_option = :id';
