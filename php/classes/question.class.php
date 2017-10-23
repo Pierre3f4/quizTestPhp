@@ -51,6 +51,7 @@ class Question {
 		return $this->options;
 	}
 	public function render(){
+		$id_question= $this->id_question;
 		$libele= $this->libele;
 		$options = "";
 		foreach ($this->options as $key => $value) {
@@ -60,7 +61,7 @@ class Question {
 		}
 		$submit = "<button class='submit-question'>Valider</button>";
 		$next = "<button class='btn-next-question'>Suivant</button>";
-		return themeQuestion($libele, $options, $submit, $next);
+		return themeQuestion($libele, $options, $submit, $next, $id_question);
 	}
 	public function getQuestionObject(){
 		$thisQuestion = array(

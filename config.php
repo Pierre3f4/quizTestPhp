@@ -9,7 +9,8 @@
 	$metaDescription = 'Quizz test PHP';
 	$googleAnalyticsId = 'UA-XXXXX-Y';
 
-	$intro = '<h3>Bienvenue sur le test</h3>Cliquez sur le bouton ci-dessous pour commencer.';
+	$intro = '<div class="question-inner"><div class="display-table"><div class="display-cell"><div class="container"><div class="row"><div class="col-md-8 col-md-offset-2"><div class="libele-wrapper"><h3><span class="bg-marron">Bienvenue sur le test</h3></div>
+	Cliquez sur le bouton ci-dessous pour commencer.<br/><br/><button id="btn-start">Commencer</button></div></div></div></div></div></div>';
 	$introBtnLabel = 'Commencer';
 
 	$conclusion = '<h3>Vous avez terminé le quiz</h3>';

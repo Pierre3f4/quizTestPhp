@@ -39,9 +39,7 @@
     <div class='question-wrapper'>
         <?php
             print ($intro);
-            print ('<div><button id="btn-start">' . $introBtnLabel . '</button></div>');
-            //$questionActive = new Question('1');
-            //print ($questionActive->render());
+            //print ('<div><button id="btn-start">' . $introBtnLabel . '</button></div>');
         ?>
     </div>
     <div class='points-wrapper'>
@@ -53,6 +51,7 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        
 
         <?php
             include($themePath . 'body.php');

@@ -10,10 +10,9 @@
 
 		       success: function(data){
 		       		
-
+		       		console.log(data);
 		       		data=JSON.parse(data);
 
-					console.log(data);
 
 
 			        if(typeof data['checkPoint'] != "undefined" && data['checkPoint'] != null){
@@ -29,6 +28,7 @@
 		        	$('.btn-next-question').on( "click", function(){
 		        		$('.question-wrapper').html(data['render']);
 		        		questionInit();
+		        		
 					});
 
 			        if(idOptionActive == '-1'){
