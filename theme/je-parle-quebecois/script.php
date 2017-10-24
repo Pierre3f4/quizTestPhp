@@ -5,66 +5,60 @@
 <script type="text/javascript">
 /*
 	$(document).ready(function () {
-		var earthIn = new TimelineMax({onComplete:function(){$('.wrapper-question.transition').removeClass('transition');}});
+		var animationIn = new TimelineMax();
 
-		earthIn.add(
+		animationIn.add(
 			TweenMax.fromTo($('.scene'), .5, {opacity : 0},  {opacity : 1})
 		);
-		earthIn.add(
-			TweenMax.fromTo($('#etoiles-filantes'), 5, {x:750, y:-150},  {x:-750, y:150}), 0
+		
+		animationIn.add(
+			TweenMax.fromTo($('#nappe1'), .5, {rotationX:-90},  {rotationX:0, ease: Back.easeOut.config(1.7)})
 		);
-		earthIn.add(
-			TweenMax.fromTo($('#asteroid'), 5, {x:500, y:50},  {x:-500, y:250}), 0
+		animationIn.add(
+			TweenMax.fromTo($('#nappe2'), .5, {rotationX:-90},  {rotationX:0, ease: Back.easeOut.config(1.7)})
 		);
-		earthIn.add(
-			TweenMax.fromTo($('#map-monde'), 5, {backgroundPosition: "0px 0px"},  {backgroundPosition: "-615px 0px"}), 0
+		animationIn.add(
+			TweenMax.fromTo($('#nappe3'), .5, {rotationX:-90},  {rotationX:0, ease: Back.easeOut.config(1.7)})
 		);
-		//rebond
-		earthIn.add(
-			TweenMax.to($('#globe'), 5, {ease: Elastic.easeOut.config(1, 0.3), y: "300px"}), 5
+		animationIn.add(
+			TweenMax.fromTo($('#nappe4'), .5, {rotationX:-90},  {rotationX:0, ease: Back.easeOut.config(1.7)})
 		);
-		earthIn.add(
-			TweenMax.to($('#asteroid'), 5, {ease: Elastic.easeOut.config(1, 0.3), y: "450px"}), 5
+		animationIn.addLabel("endNappe");
+		animationIn.add(
+			TweenMax.from($('#lait'), 2, {opacity:0, x:-400, y:-400, ease: Back.easeInOut.config(1.7)}), "endNappe"
 		);
-		earthIn.add(
-			TweenMax.to($('#etoiles-filantes'), 5, {ease: Elastic.easeOut.config(1, 0.3), y: "400px"}), 5
+		animationIn.add(
+			TweenMax.from($('#cereales'), 2, {opacity:0, y:-400, ease: Back.easeInOut.config(1.7)}), "endNappe"
 		);
-		earthIn.add(
-			TweenMax.to($('#question-wrapper'), 5, {ease: Elastic.easeOut.config(1, 0.3), y: "0px"}), 5
+		animationIn.add(
+			TweenMax.from($('#fruits'), 2, {opacity:0, x:400, y:-400, ease: Back.easeInOut.config(1.7)}), "endNappe"
 		);
-		earthIn.add(
-			TweenMax.fromTo($('.question-inner'), 5, {y:-700}, {y: 0, ease: Elastic.easeOut.config(1, 0.3)}), 5
+		animationIn.add(
+			TweenMax.from($('#cafe'), 1.5, {opacity:0, x:-400, y:400, ease: Back.easeInOut.config(1.7)}), "endNappe"
+		);
+		animationIn.add(
+			TweenMax.from($('#sauces'), 2.5, {opacity:0, x:-400, ease: Back.easeInOut.config(1.7)}), "endNappe"
+		);
+		animationIn.add(
+			TweenMax.from($('#assiette'), 2, {opacity:0, y:400, ease: Back.easeInOut.config(1.7)}), "endNappe"
+		);
+		animationIn.add(
+			TweenMax.from($('#couverts'), 2, {opacity:0, x:400, y:400, ease: Back.easeInOut.config(1.7)}), "endNappe"
 		);
 		
+		animationIn.addLabel("zoom");
 
-		earthIn.pause();
-		
+		animationIn.add(
+			TweenMax.fromTo($('.scene'), 1, {scale:.5},  {scale:1, ease: Back.easeInOut.config(1.7)}), "zoom"
+		);
+		animationIn.add(
+			TweenMax.fromTo($('.scene-inner'), 1, {scale:.5},  {scale:1, ease: Back.easeInOut.config(1.7)}), "zoom"
+		);
+		animationIn.add(
+			TweenMax.fromTo($('.question-inner'), 1, {scale:0, opacity:0},  {scale:1, opacity:1, ease: Back.easeInOut.config(1.7)}), "zoom"
+		);
+
 	});
-*/
-/*
-	function animationOut(){
-		var earthOut = new TimelineMax({onComplete:function(){$(".question-wrapper.transition").removeClass("transition");}});
-
-		earthOut.add(
-			TweenMax.to($('#etoiles-filantes'), 2, { opacity: 0}), 0
-		);
-		earthOut.add(
-			TweenMax.to($('#asteroid'), 2, { opacity: 0}), 0
-		);
-		earthOut.add(
-			TweenMax.to($('.question-inner'), 3, {scale:0, ease: Power4.easeInOut}), 0
-		);
-		earthOut.add(
-			TweenMax.to($('.question-inner'), 1.5, {y:-500, opacity:0, ease: Power4.easeInOut}), 1.5
-		);
-		earthOut.add(
-			TweenMax.to($('#globe'), 3, {scale:0, ease: Power4.easeInOut}), 0
-		);
-		earthOut.add(
-			TweenMax.to($('#globe'), 3, {y:-500, opacity:0, ease: Power4.easeInOut}), 0
-		);
-
-	}
 */
     
 </script>

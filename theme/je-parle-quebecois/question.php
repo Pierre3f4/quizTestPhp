@@ -47,8 +47,34 @@
 					<div id="asteroid"></div>
 				</div>
 			</div>';
+		}elseif($idQuestion==2){
+			return '
+			<div class="scene-wrapper">
+				<div class="scene-inner">
+					<div id="nappe-masque">
+						<div id="nappe1"></div>
+						<div id="nappe2"></div>
+						<div id="nappe3"></div>
+						<div id="nappe4"></div>
+					</div>
+					<div class="scene">
+						<div id="lait"></div>
+						<div id="cereales"></div>
+						<div id="fruits"></div>
+						<div id="cafe"></div>
+						<div id="sauces"></div>
+						<div id="assiette"></div>
+						<div id="couverts"></div>
+					</div>
+				</div>
+			</div>
+			';
 		}
 	}
+
+
+
+
 	function animationIn($idQuestion){
 		if($idQuestion==1){
 			return '
@@ -85,10 +111,67 @@
 					
 			</script>
 			';
+		}elseif($idQuestion==2){
+			return '
+				<script type="text/javascript">
+					animationIn = new TimelineMax();
+
+					animationIn.add(
+						TweenMax.fromTo($(".scene"), .5, {opacity : 0},  {opacity : 1})
+					);
+					
+					animationIn.add(
+						TweenMax.fromTo($("#nappe1"), .5, {rotationX:-90},  {rotationX:0, ease: Back.easeOut.config(1.7)})
+					);
+					animationIn.add(
+						TweenMax.fromTo($("#nappe2"), .5, {rotationX:-90},  {rotationX:0, ease: Back.easeOut.config(1.7)})
+					);
+					animationIn.add(
+						TweenMax.fromTo($("#nappe3"), .5, {rotationX:-90},  {rotationX:0, ease: Back.easeOut.config(1.7)})
+					);
+					animationIn.add(
+						TweenMax.fromTo($("#nappe4"), .5, {rotationX:-90},  {rotationX:0, ease: Back.easeOut.config(1.7)})
+					);
+					animationIn.addLabel("endNappe");
+					animationIn.add(
+						TweenMax.from($("#lait"), 2, {opacity:0, x:-400, y:-400, ease: Back.easeInOut.config(1.7)}), "endNappe"
+					);
+					animationIn.add(
+						TweenMax.from($("#cereales"), 2, {opacity:0, y:-400, ease: Back.easeInOut.config(1.7)}), "endNappe"
+					);
+					animationIn.add(
+						TweenMax.from($("#fruits"), 2, {opacity:0, x:400, y:-400, ease: Back.easeInOut.config(1.7)}), "endNappe"
+					);
+					animationIn.add(
+						TweenMax.from($("#cafe"), 1.5, {opacity:0, x:-400, y:400, ease: Back.easeInOut.config(1.7)}), "endNappe"
+					);
+					animationIn.add(
+						TweenMax.from($("#sauces"), 2.5, {opacity:0, x:-400, ease: Back.easeInOut.config(1.7)}), "endNappe"
+					);
+					animationIn.add(
+						TweenMax.from($("#assiette"), 2, {opacity:0, y:400, ease: Back.easeInOut.config(1.7)}), "endNappe"
+					);
+					animationIn.add(
+						TweenMax.from($("#couverts"), 2, {opacity:0, x:400, y:400, ease: Back.easeInOut.config(1.7)}), "endNappe"
+					);
+					
+					animationIn.addLabel("zoom");
+
+					animationIn.add(
+						TweenMax.fromTo($(".scene"), 1, {y:-60, scale:.5},  {y:0, scale:1, ease: Back.easeInOut.config(1.7)}), "zoom"
+					);
+					animationIn.add(
+						TweenMax.fromTo($(".scene-inner"), 1, {scale:.5},  { scale:1, ease: Back.easeInOut.config(1.7)}), "zoom"
+					);
+					animationIn.add(
+						TweenMax.fromTo($(".question-inner"), 1, {scale:0, opacity:0},  {scale:1, opacity:1, ease: Back.easeInOut.config(1.7)}), "zoom"
+					);
+				</script>
+			';			
 		}else{
 			return '
 				<script type="text/javascript">
-							animationIn = "";
+					animationIn = "";
 				</script>
 			';
 		}
@@ -123,6 +206,12 @@
 							animationOut.pause();
 
 
+				</script>
+			';
+		}elseif($idQuestion==2){
+			return '
+				<script type="text/javascript">
+					animationOut = "reverse";
 				</script>
 			';
 		}else{

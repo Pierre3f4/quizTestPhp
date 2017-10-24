@@ -30,6 +30,17 @@
 		        		questionInit();
 			        }
 		        	$('.btn-next-question').on( "click", function(){
+		        			if(animationOut=="reverse"){
+		        				$(".question-wrapper").addClass("transition");
+		        				animationIn.eventCallback("onReverseComplete",
+		        					function(){
+		        					$(".question-wrapper.transition").removeClass("transition");
+		        					$('.question-wrapper').html(data['render']);
+		        					questionInit();
+		        					}
+		        				);
+		        				animationIn.reverse();
+		        			}
 		        			if(animationOut!==""){
 		        				$(".question-wrapper").addClass("transition");
 		        				animationOut.addCallback(function(){
@@ -59,6 +70,8 @@
 				$('.option').removeClass("selected");
 				$(this).addClass("selected");
 				$('.submit-question').show();
+				
+				TweenMax.to($(".submit-wrapper"), 1, {height:100}), 1;
 	        	idOptionActive = $(this).attr("option-id");
 			});
 

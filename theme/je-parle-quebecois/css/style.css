@@ -77,6 +77,22 @@ h3{
 	z-index: 1;
 	overflow: hidden;
 }
+.scene-inner{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+.scene{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 1px;
+	height: 1px;
+}
+/*-----animation earth----*/
 .stars{
 	position: absolute;
 	top: 0;
@@ -85,13 +101,6 @@ h3{
 	height: 100%;
 	background :url(../images/stars.png) center center repeat transparent;
 	opacity: .5;
-}
-.scene{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 1px;
-	height: 1px;
 }
 
 #etoiles-filantes{
@@ -109,7 +118,6 @@ h3{
     background:url(../images/asteroid.png) center center no-repeat;
     width: 109px;
     height: 108px;
-
 }
 #globe{
 	width: 340px;
@@ -126,6 +134,106 @@ h3{
 	height: 340px;
 	background:url(../images/map-monde.png) 0 0 repeat-x transparent;
 }
+
+/*-----animation repas----*/
+#nappe-masque {
+	position: absolute;
+	width: 100%;
+	height: 25%;
+	top: 0;
+	left: 0;
+}
+#nappe1,
+#nappe2,
+#nappe3,
+#nappe4{
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background :url(../images/nappe.png) top left repeat transparent;
+	opacity: 1;
+	transform-origin: 50% 0%;
+	transform: perspective(800px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+#nappe1{
+	top: 0;
+	background-position: 0 0%;
+}
+#nappe2{
+	top: 100%;
+	background-position: 0 -100%;
+}
+#nappe3{
+	top: 200%;
+	background-position: 0 -200%;
+}
+#nappe4{
+	top: 300%;
+	background-position: 0 -300%;
+}
+#nappe5{
+	top: 400%;
+	background-position: 0 -400%;
+}
+
+#lait{
+	width: 370px;
+	height: 370px;
+	background:url(../images/lait.png) center center no-repeat transparent;
+	position: absolute;
+	top: -330px;
+    left: -550px;
+}
+#cereales{
+	width: 370px;
+	height: 370px;
+	background:url(../images/cereales.png) center center no-repeat transparent;
+	position: absolute;
+	top: -330px;
+    left: -165px;
+}
+#fruits{
+	width: 370px;
+	height: 370px;
+	background:url(../images/fruits.png) center center no-repeat transparent;
+	position: absolute;
+	top: -330px;
+    left: 200px;
+}
+#cafe{
+	width: 370px;
+	height: 370px;
+	background:url(../images/cafe.png) center center no-repeat transparent;
+	position: absolute;
+	top: 0px;
+    left: -550px;
+}
+#sauces{
+	width: 370px;
+	height: 370px;
+	background:url(../images/sauces.png) center center no-repeat transparent;
+	position: absolute;
+	top: 250px;
+    left: -550px;
+}
+#assiette{
+	width: 450px;
+	height: 450px;
+	background:url(../images/assiette.png) center center no-repeat transparent;
+	position: absolute;
+	top: 50px;
+    left: -200px;
+}
+#couverts{
+	width: 150px;
+	height: 450px;
+	background:url(../images/couverts.png) center center no-repeat transparent;
+	position: absolute;
+	top: 50px;
+    left: 300px;
+}
+
 
 
 
